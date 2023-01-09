@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: origin
+spec:
+  containers:
+  - name: origin
+    image: origin
+  spec:
+    containers:
+    - name: nginx
+      image: nginx
+    - name: redis
+      image: redis
+    - name: memcached
+      image: memcached 

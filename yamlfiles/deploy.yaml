@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-app
+  namespace: hubs
+spec:
+  replicas: 6      
+  selector:
+    matchLabels:
+      kubernetes.io/os: linux
+  template:
+    metadata:
+      labels:
+        kubernetes.io/os: linux
+    spec:
+      nodeSelector:
+       kubernetes.io/os: linux
+      containers:
+      - name: nginx
+        image: nginx:1.23.3-alpine
+       

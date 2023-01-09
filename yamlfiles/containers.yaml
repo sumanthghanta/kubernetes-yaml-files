@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: origin
+  namespace: hubs
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 83
+  - name: redis
+    image: redis
+  - name: memcached
+    image: memcached

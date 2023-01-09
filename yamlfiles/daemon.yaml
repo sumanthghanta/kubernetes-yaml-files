@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nagios
+  namespace: hubs
+spec:
+  selector:
+    matchLabels:
+      kubernetes.io/os: linux
+  template:
+    metadata:
+      labels:
+        kubernetes.io/os: linux
+    spec:
+      nodeSelector:
+       kubernetes.io/os: linux
+      containers:
+      - name: nagios
+        image: jasonrivers/nagios
